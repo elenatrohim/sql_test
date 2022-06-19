@@ -1,0 +1,9 @@
+SELECT SUM(amount), first_name
+FROM (SELECT employees.id as id,
+       employees.first_name as first_name, 
+       employees.last_name as last_name, 
+       salaries.amount as amount
+       FROM employees
+       LEFT JOIN salaries ON employees.salary_id = salaries.id)
+GROUP BY first_name
+WHERE amount > 10000
