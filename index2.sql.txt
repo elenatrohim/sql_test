@@ -5,5 +5,5 @@ FROM (SELECT employees.id as id,
        salaries.amount as amount
        FROM employees
        LEFT JOIN salaries ON employees.salary_id = salaries.id)
-GROUP BY first_name
-WHERE amount > 10000
+GROUP BY first_name;
+WHERE amount > 10000;
